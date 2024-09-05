@@ -1,0 +1,16 @@
+
+# List of dependencies required to run the pipeline
+assemblyai
+cv2
+datetime
+ffmpeg
+json
+matplotlib.pyplot
+numpy
+os
+pandas
+pytesseract
+re
+sys
+tqdm
+warnings
