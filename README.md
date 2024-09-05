@@ -5,7 +5,7 @@
 
 This repository contains a pipeline to transcribe bodycam videos, extract timestamps, and assign bodycamera transcripts to computer-aided dispatch (CAD) number unique identifiers. The pipeline is designed to be run in a Unix-like environment with the provided shell script.
 
-A demo video of the Siskiyou pipeline can be found [here](https://drive.google.com/file/d/1BlchO9N9Vps_Ae2nsO2WJZLSjdo6f7GY/view?usp=sharing).
+A demo video of the pre-processing pipeline can be found [here](https://drive.google.com/file/d/1BlchO9N9Vps_Ae2nsO2WJZLSjdo6f7GY/view?usp=sharing).
 
 ## File Descriptions
 
