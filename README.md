@@ -1,87 +1,46 @@
 
-# Bodycam Video Processing Pipeline
+# Bodycam Transcript Search Classifier
 
-![Siskiyou Pipeline](siskiyou_pipeline.jpg)
+This repository contains resources for a project aimed at classifying transcripts that contain police searches. The project includes a model training notebook, a pre-trained model (Test Set Accuracy: 88% | Precision: 45% | Recall: 83%), and labeled data used for training. 
 
-This repository contains a pipeline to transcribe bodycam videos, extract timestamps, and assign bodycamera transcripts to computer-aided dispatch (CAD) number unique identifiers. The pipeline is designed to be run in a Unix-like environment with the provided shell script.
+## Presentation
+Information about model training and performance was presented to ACLU attorneys in May, 2024. The presentation can be found here: [https://docs.google.com/presentation/d/1loyEmG-KriFtHOBHD2x-RyCTEJal65KX2RSz9zjXKR0/edit?usp=sharing](https://docs.google.com/presentation/d/1R0gg6ssnXQd461zMOuv7qex55wx8SIudQlDcGeh8zMw/edit?usp=sharing)
 
-A demo video of the pre-processing pipeline can be found [here](https://drive.google.com/file/d/1BlchO9N9Vps_Ae2nsO2WJZLSjdo6f7GY/view?usp=sharing).
+## Repository Contents
 
-## File Descriptions
+1. **embedding_and_training.ipynb**: This Jupyter notebook contains the code for embedding the transcripts and training the classification model.
 
-### Python Files
+## Setup Instructions
 
-1. **transcribe_videos.py**
-   - **Function:** Transcribes bodycam videos located in a specified directory.
-   - **Usage:** `python3 transcribe_videos.py <videos_directory> <transcripts_directory>`
-   - **Output:** Transcripts saved in the specified transcripts directory.
+### Prerequisites
 
-2. **extract_timestamps.py**
-   - **Function:** Extracts timestamps from bodycam videos.
-   - **Usage:** `python3 extract_timestamps.py <videos_directory> <output_csv_file>`
-   - **Output:** Timestamps saved in the specified CSV file.
+To run the notebook and use the model, you will need the following:
+- Python 3.7+
+- Jupyter Notebook
+- Required Python packages (listed in `embedding_and_training.ipynb`)
 
-3. **link_videos_to_CAD.py**
-   - **Function:** Links bodycam videos to CAD (Computer-Aided Dispatch) data using timestamps.
-   - **Usage:** `python3 link_videos_to_CAD.py <cad_file> <timestamps_csv_file> <output_directory>`
-   - **Output:** Linked videos saved in the specified output directory.
+### Installation
 
-4. **transcribe_linked_videos.py**
-   - **Function:** Combines linked videos and transcripts into a single file.
-   - **Usage:** `python3 transcribe_linked_videos.py <linked_videos_csv_file> <transcripts_directory> <output_csv_file>`
-   - **Output:** Combined linked videos and transcripts saved in the specified CSV file.
+1. Clone this repository to your local machine:
+   ```bash
+   git clone [https://github.com/ia/ACLU-police-search-classifier.git](https://github.com/ianduke25/search_classifier)
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd search_classifier
+   ```
 
-### Shell Script
+### Running the Notebook
 
-**pipeline.sh**
-- **Function:** Orchestrates the entire pipeline, prompting the user for necessary directories and files.
-- **Usage:** `./pipeline.sh`
-- **Steps:**
-  1. Transcribes videos.
-  2. Extracts timestamps from videos.
-  3. Links videos to CAD using timestamps.
-  4. Combines linked videos with transcripts.
+1. Launch Jupyter Notebook:
+   ```bash
+   jupyter notebook
+   ```
+2. Open `embedding_and_training.ipynb` in Jupyter Notebook.
+3. Follow the steps in the notebook to understand the data preprocessing, embedding, and model training processes.
 
-## Directory Structure
+## Required Data
 
-The pipeline requires specific directories for input and output files. Below is the required directory structure:
-
-```
-.
-├── data
-│   ├── timestamps.csv               # Output file for timestamps
-│   ├── linked_videos.csv            # Output file for linked videos
-│   ├── unmatched_videos.csv         # Output file for videos without a link 
-│   └── linked_videos_transcribed.csv # Output file for linked videos and transcripts
-├── transcribe_videos.py
-├── extract_timestamps.py
-├── link_videos_to_CAD.py
-├── transcribe_linked_videos.py
-└── pipeline.sh
-```
-
-## Running the Pipeline
-
-1. Make sure you have Python 3 and the required dependencies installed.
-2. Place your bodycam videos in a directory (e.g., `videos/`).
-3. Create a directory to save the transcripts to (e.g., `transcripts/`).
-4. Place your CAD file in the desired location.
-
-### Running the Shell Script
-
-1. Open a terminal and navigate to the directory containing `pipeline.sh`.
-2. Make the script executable by running `chmod +x pipeline.sh`
-3. Run the script using the following Terminal command: `./pipeline.sh`
-4. Follow the prompts to provide the necessary directories and files.
-
-## Dependencies
-
-All required dependencies are listed in the `requirements.txt` file.
-
-## Using requirements.txt
-
-To install the required dependencies, run the following command in your terminal:
-
-```bash
-pip install -r requirements.txt
-```
+A `search_labels.csv` file containing labeled data used for training the model. It should include two columns:
+- `transcript`: The text of the transcript.
+- `label`: The label indicating whether the transcript contains a police search (1) or not (0).
