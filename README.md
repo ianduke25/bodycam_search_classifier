@@ -3,9 +3,6 @@
 
 This repository contains resources for a project aimed at classifying transcripts that contain police searches. The project includes a notebook with steps to train and save a private model (Test Set Accuracy: 88% | Precision: 45% | Recall: 83%).
 
-## Presentation
-Information about model training and performance was presented to ACLU attorneys in May, 2024. The presentation can be found here: [https://docs.google.com/presentation/d/1loyEmG-KriFtHOBHD2x-RyCTEJal65KX2RSz9zjXKR0/edit?usp=sharing](https://docs.google.com/presentation/d/1R0gg6ssnXQd461zMOuv7qex55wx8SIudQlDcGeh8zMw/edit?usp=sharing)
-
 ## Repository Contents
 
 1. **embedding_and_training.ipynb**: This Jupyter notebook contains the code for embedding the transcripts and training the classification model.
