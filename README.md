@@ -1,7 +1,7 @@
 
 # Bodycam Transcript Search Classifier
 
-This repository contains resources for a project aimed at classifying transcripts that contain police searches. The project includes a notebook with steps to train and save a private model (Test Set Accuracy: 88% | Precision: 45% | Recall: 83%).
+This repository contains resources for a project aimed at classifying transcripts that contain police searches. The project includes a notebook with steps to train and save a private model.
 
 ## Repository Contents
 
