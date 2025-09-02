@@ -3,10 +3,6 @@
 
 This repository contains resources for a project aimed at classifying transcripts that contain police searches. The project includes a notebook with steps to train and save a private model.
 
-## Repository Contents
-
-1. **embedding_and_training.ipynb**: This Jupyter notebook contains the code for embedding the transcripts and training the classification model.
-
 ## Setup Instructions
 
 ### Prerequisites
