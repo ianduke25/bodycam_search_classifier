@@ -18,7 +18,7 @@ import torch
 
 class TextAnalysisToolkit:
     """
-    A comprehensive toolkit for text analysis, embedding generation, and bodycam search classification.
+    A toolkit for text analysis, embedding generation, and bodycam search classification.
     """
     
     def __init__(self):
