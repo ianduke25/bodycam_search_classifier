@@ -14,13 +14,11 @@ To run the notebook and use the model, you will need the following:
 
 ### Installation
 
-1. Clone this repository to your local machine:
-   ```bash
-   git clone [https://github.com/ia/ACLU-police-search-classifier.git](https://github.com/ianduke25/search_classifier)
-   ```
+1. Clone this repository to your local machine. 
+
 2. Navigate to the project directory:
    ```bash
-   cd search_classifier
+   cd bodycam_search_classifier
    ```
 
 ### Running the Notebook
@@ -29,7 +27,7 @@ To run the notebook and use the model, you will need the following:
    ```bash
    jupyter notebook
    ```
-2. Open `embedding_and_training.ipynb` in Jupyter Notebook.
+2. Open `search_classifier_training.ipynb` in Jupyter Notebook.
 3. Follow the steps in the notebook to understand the data preprocessing, embedding, and model training processes.
 
 ## Required Data
